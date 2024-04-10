@@ -1,4 +1,6 @@
 .default-footer{
+    position:fixed;
+    bottom: 0;
     text-align: center;
     width: 100%;
     background-color:rgb(238, 235, 235);
@@ -10,3 +12,11 @@
     left:0;
     margin:2px auto 2px auto;
 }
+
+/* category style class **/
+
+/*!
+ * Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com
+ * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
+ * Copyright 2023 Fonticons, Inc.
+ */

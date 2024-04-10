@@ -27,7 +27,7 @@ domain: mroverose.github.io
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://mroverose.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  mroverose
-paginate: 5
+paginate: 3
 
 #Aout author
 author:
@@ -45,10 +45,14 @@ plugins:
 
 defaults:
     - scope:
+        path: ""
+      values:
+        layout: "default"
+    - scope:
         path: ""  #空的字符串代表项目中所有的文件
         type: "posts"    #posts里的文件
       values:
-        layout: "default"
+        layout: "post"
 
 show_excerpt: true
 excerpt_separator: "-"   ##关闭自动生成摘要
@@ -62,9 +66,16 @@ detach: false
 port: 4000
 host: 127.0.0.1
 
-#sass:
-  #- sass_dir: _sass
- # - style: compressed
+
+collections:
+  tabs:
+    output: true
+    sort_by: order
+
+
+sass:
+  sass_dir: _sass
+  style: compressed
 
 #timezone: null
 # Exclude from processing.
