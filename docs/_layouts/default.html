@@ -3,43 +3,26 @@
     {% include head.html %}
     <body class="">
         {% include sidebar.html %}
-        <div class="wrap">
-            
-            <div class="masthead">
-                <div class="container" >
-                    <h3 class="masthead-title">
-                        <a href="{{ site.baseurl }}/" title="Home">{{ site.title }}</a>
-                        <small>{{ site .tagline }}</small>
-                    </h3>
-                    <nav class="masthead-nav">
-                        <a  href="{{ '/' | absolute_url }}">
-                            <i class="fa-solid fa-home fa-0"></i>&nbsp;主页
-                        </a>
+        <div id="wrap" class="d-flex flex-column justify-content-center">
+                {% include topbar.html %}
+                {% include search-results.html %}
+                <div id="main-content" class="d-flex  justify-content-around">
+                    <aside class="col-1 col-xl-2"></aside>
+                    <main aria-label="Main Content" class="col-7 px-md-4">
+                        {{ content }}
+                    </main>
 
-        <!-- the real tabs -->
-      {% for tab in site.tabs %}
-        {% capture tab_name %}{{ tab.url | split: '/' }}{% endcapture %}
-        <a href="{{ tab.url | relative_url }}" >
-          <i class="fa-fw {{ tab.icon }}"></i>
-          <span>{{ site.tabs[tab_name]  | default: tab.title  | upcase}}</span>
-        </a>
-      <!-- .nav-item -->
-    {% endfor %}
-
-                    
-                    </nav>
+                    <aside aria-label="Panel" id="panel-wrapper" class="col-lg-2 col-xl-3 ps-2 mb-5 text-muted">
+                        {% include update-list.html %}
+                        {% include trending-tags.html %}
+                      </aside>
                 </div>
-            </div>
-         
-            <div class="container content">
-
-                {{ content }}
-            </div>
-        </div>
-        <footer class="default-footer"><small>&copy;{{ site.time | date: '%Y' }}.Theme by </small><a href="http://lanyon.getpoole.com">Lanyon</a>.<small>Powered by</small> <a href="https://jekyllrb.com">Jekyll.</a></footer>
+    </div>
+    
+    <footer class="default-footer col-12 col-lg-11 col-xl-9 px-md-4"><small>&copy;{{ site.time | date: '%Y' }}.Theme by </small><a href="http://lanyon.getpoole.com">Lanyon</a>& <a href="https://github.com/cotes2020/jekyll-theme-chirpy">Chirpy.</a> <small> Powered by</small> <a href="https://jekyllrb.com">Jekyll.</a></footer>
 
         <label for="sidebar-checkbox" class="sidebar-toggle"></label>
-
+        {% include search-loader.html %}
         <script src="{{ site.baseurl }}/assets/js/script.js"></script>
 
 </body>

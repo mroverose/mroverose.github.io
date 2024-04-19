@@ -1,0 +1,30 @@
+--- 
+layout: default
+---
+{% include toc.html html=content %}
+<div class="post">
+    <h2 class="post-title">{{ page.title }}</h2>
+    <span class="post-date">{{ page.date | date_to_string }}</span>
+    <div class="post-meta">
+        <span>本文总共 {{ page.content | strip_html | strip_newlines | remove: " " | size }} 字 <b>·</b> 阅读全文大约需要 {{ page.content | strip_html | strip_newlines | remove: " " | size | divided_by: 350 | plus: 1 }} 分钟</span>
+    </div>
+    {{ content }}
+</div>
+
+{% if site.related_posts.size >= 1 %}
+<div class="related">
+    <h2>相关文章</h2>
+    <ul class="related-posts">
+        {% for post in site.related_posts limit:3 %}
+        <li>
+            <h3>
+                <a href="{{ site.baseurl }}{{ post.url }}">
+                    {{ post.title }}
+                    <small>{{ post.date | date_to_string }}</small>
+                </a>
+            </h3>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endif %}

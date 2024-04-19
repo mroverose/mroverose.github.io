@@ -19,11 +19,14 @@
      
            <!-- the real tabs -->
       {% for tab in site.tabs %}
+          {% if tab.title == 'tabs'%}
+            {% continue %}
+          {% endif %}
         <a href="{{ tab.url | relative_url }}" class="sidebar-nav-item{% if tab.url == page.url %} active{% endif %}">
           <i class="fa-fw {{ tab.icon }}"></i>
           {% capture tab_name %}{{ tab.url | split: '/' }}{% endcapture %}
 
-          <span>{{ site.tabs.[tab_name] | default: tab.title | upcase }}</span>
+          <span>{{ tab_name | default: tab.title | upcase }}</span>
         </a>
       <!-- .nav-item -->
     {% endfor %}

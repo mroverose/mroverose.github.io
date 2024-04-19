@@ -1,9 +1,9 @@
 .default-footer{
-    position:fixed;
-    bottom: 0;
-    text-align: center;
-    width: 100%;
-    background-color:rgb(238, 235, 235);
+  position: relative;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+  background-color:rgb(238, 235, 235);
 }
 
 #sidebar-copyright{
@@ -13,9 +13,36 @@
     margin:2px auto 2px auto;
 }
 
-/* category style class **/
+.masthead-nav{
+    margin: 5px;
+    padding:5px;
+    text-align: right;
+}
 
-/*!
+.masthead-nav a{
+    color: #268bd2;
+    text-decoration: none;
+  }
+  .masthead-nav a strong {
+    color: inherit;
+  }
+  /* `:focus` is linked to `:hover` for basic accessibility */
+  .masthead-nav a:hover,
+  .masthead-nav a:focus {
+    text-decoration: underline;
+  }
+
+
+  #topbar{
+    padding-top: 0%;
+    margin-top: 0px;
+    margin-bottom: 10px;
+  }
+
+  .topbar-search :focus{
+    outline-offset: 0; 
+  }
+  /**
  * Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
  * Copyright 2023 Fonticons, Inc.

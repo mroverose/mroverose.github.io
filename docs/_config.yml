@@ -55,7 +55,7 @@ defaults:
         layout: "post"
 
 show_excerpt: true
-excerpt_separator: "-"   ##关闭自动生成摘要
+excerpt_separator: "<!- excerpt_separator ->"   ##为空关闭自动生成摘要
 
 header_pages:
   - about.md

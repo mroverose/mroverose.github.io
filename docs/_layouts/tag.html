@@ -3,21 +3,20 @@ layout: page
 # The layout for Tag page
 ---
 
-{% include lang.html %}
-
 <div id="page-tag">
   <h1 class="ps-lg-2">
     <i class="fa fa-tag fa-fw text-muted"></i>
-    {{ page.title }}
-    <span class="lead text-muted ps-2">{{ page.posts | size }}</span>
+    {{ page.tag }}
+    <span class="lead text-muted ps-2">{{ site.tags[page.tag] | size }}</span>
   </h1>
-  <ul class="content ps-0">
-    {% for post in page.posts %}
-      <li class="d-flex justify-content-between px-md-3">
-        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-        <span class="dash flex-grow-1"></span>
-        {% include datetime.html date=post.date class='text-muted small text-nowrap' lang=lang %}
+  <ul class="content ps-0 list-group">
+
+    {% for post in site.tags[page.tag] %}
+      <li class="d-flex  list-group-item">
+        <a class="list-group-item-action" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        {% include datetime.html date=post.date class='text-muted text-nowrap' lang=lang %}
       </li>
     {% endfor %}
+
   </ul>
 </div>
