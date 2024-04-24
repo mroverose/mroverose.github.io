@@ -62,21 +62,21 @@
             <span> > </span>
           {% elsif forloop.last %}
             {% if page.collection == 'tabs' %}
-              <span class="" style="width:50px">{{ page.title }}</span>
+              <span class="">{{ page.title }}</span>
             {% elsif page.layout == 'post' %}
-              <span class="col-bg-light">{{ page.describe }}</span>
+              <span class="bg-light">{{ page.describe }}</span>
             {% else %}
-              <span class=" " style="width:50px">{{ page.title | default: item | split:'.'|first }}</span>
+              <span class=" ">{{ page.title | default: item | split:'.'|first }}</span>
             {% endif %}
 
           {% elsif page.layout == 'category' %}
-              <span style="width:50px"><a href="{{ item | append: '/' | relative_url }}" class="nav-item-link" >
+              <span><a href="{{ item | append: '/' | relative_url }}" class="nav-item-link" >
                 {{- site.tabs[item] | default: page.title -}}
               </a>
             </span> 
             <span> > </span>
           {% elsif page.layout == 'tag' %}
-            <span class="" style="width:50px">
+            <span class="">
               <a href="{{ item | append: '/' | relative_url }}" class="nav-item-link">{{- item | default: page.title -}}</a>
             </span>
             <span> > </span>
@@ -88,7 +88,7 @@
     <div class="col-3"></div>
     <!-- endof #breadcrumb -->
 
-    <div id="topbar-title" class="col-3">
+    <div id="topbar-title" class="col-2">
     
    </div>
    
