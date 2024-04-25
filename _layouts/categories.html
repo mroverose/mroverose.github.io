@@ -78,13 +78,13 @@ layout: default
 
             <!--sub-categories-->
             {% if sub_categories_size > 0 %}
-                <div id="{{ LIST_PREFIX }}{{ group_index }}" class="collapse" aria-expanded="true">
+                <div id="{{ LIST_PREFIX }}{{ group_index }}" class="collapse show" aria-expanded="true">
                     <ul class="list-group">
                         {% for sub_category in sub_categories %}
                         <li class="list-group-item">
                             <i class="far fa-folder fa-fw"></i>
 
-                            {% capture _sub_ctg_url %}/category/{{ sub_category | slugify | url_encode }}/{% endcapture %}
+                            {% capture _sub_ctg_url %}/category/{{ category_name }}/{{ sub_category | slugify | url_encode }}/{% endcapture %}
                             <a href="{{ _sub_ctg_url | relative_url }}" class="mx-2 list-group-item-action">{{ sub_category }}</a>
 
                             {% assign posts_size = site.categories[sub_category] | size %}

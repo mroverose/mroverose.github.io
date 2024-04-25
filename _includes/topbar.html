@@ -36,15 +36,13 @@
   
   <div class="d-flex justify-content-end">
     <div class="col-3"></div>
-    
-   
   </div>
 </div>
 
-  <div id="topbar" class="d-flex  justify-content-between">
-    <div class="col-2"></div>
+  <div id="topbar" class="d-flex justify-content-around">
+    <div class=""></div>
     <div>
-    <nav id="breadcrumb" aria-label="Breadcrumb" class="flex-nowrap align-items-baseline nav col-4">
+    <nav id="breadcrumb" aria-label="Breadcrumb" class="nav">
       {% assign paths = page.url | split: '/' %}
       
       {% if paths.size == 0 or page.layout == 'home' %}
@@ -63,21 +61,52 @@
           {% elsif forloop.last %}
             {% if page.collection == 'tabs' %}
               <span class="">{{ page.title }}</span>
-            {% elsif page.layout == 'post' %}
-              <span class="bg-light">{{ page.describe }}</span>
-            {% else %}
-              <span class=" ">{{ page.title | default: item | split:'.'|first }}</span>
+            {% elsif page.layout == 'post' or page.layout == 'tag' %}
+              <span class="bg-light">{{ page.title }}</span>
+            {% else %} 
+              <span class=" ">
+                {% if item contains 'web' and page.layout == 'category' %}
+                Web技术
+                {% else %}
+                  {{ item | split:'.'|first }}
+                {% endif %}
+              </span>
             {% endif %}
 
           {% elsif page.layout == 'category' %}
-              <span><a href="{{ item | append: '/' | relative_url }}" class="nav-item-link" >
-                {{- site.tabs[item] | default: page.title -}}
+              <span>
+                {% if item != 'category' %}
+              <a href="{{ 'category' | append: '/' | append:item | append: '/' | relative_url }}" class="nav-item-link" >
+                {% if item contains 'web' %}
+                Web技术
+                {% else %}
+                  {{- item | default: page.title -}}
+                {% endif %}
               </a>
+              {% else %}
+              <a href="{{ item | append: '/' | relative_url }}" class="nav-item-link" >
+                {% if item contains 'web' %}
+                Web技术
+                {% else %}
+                  {{- item | default: page.title -}}
+                {% endif %}
+              </a>
+              {% endif %}
             </span> 
             <span> > </span>
+          {% elsif page.layout == 'categories' %}
+            <span><a href="{{ item | append:'/' | relative_url }}" class="nav-item-link" >
+              {{- item | default:page.title -}}
+            </a></span>
           {% elsif page.layout == 'tag' %}
             <span class="">
-              <a href="{{ item | append: '/' | relative_url }}" class="nav-item-link">{{- item | default: page.title -}}</a>
+              <a href="{{ item | append: '/' | relative_url }}" class="nav-item-link">
+                {% if item contains '%' %}
+                {{ page.title }}
+                {% else %}
+                  {{- item | default: page.title -}}
+                {% endif %}
+              </a>
             </span>
             <span> > </span>
           {% endif %}
@@ -85,12 +114,12 @@
       {% endif %}
     </nav>
     </div>
-    <div class="col-3"></div>
+    <div class="col-1"></div>
     <!-- endof #breadcrumb -->
 
-    <div id="topbar-title" class="col-2">
+    <div id="topbar-title" class="">
     
-   </div>
+   
    
   <search id="topbar-search" class="container">
     <i class="fas fa-search fa-fw"></i>
@@ -104,7 +133,7 @@
     >
     
   </search>
-  
+  </div>
   </div>
   </header> 
   
