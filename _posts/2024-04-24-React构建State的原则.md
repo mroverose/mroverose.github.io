@@ -4,7 +4,7 @@ title: React中State的构建原则
 description: "React"
 date:   2024-04-24 16:02:02 +0800
 categories: web技术 React
-tags: web前端 React
+tags: Web前端 React
 ---
 #### React中构建state的原则
 >当编写一个有state的组件时，你需要选择使用多少个state变量以及它们都是怎样的数据格式，下面几个原则有助于做出更好的决策:
