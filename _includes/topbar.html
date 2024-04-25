@@ -66,7 +66,9 @@
             {% else %} 
               <span class=" ">
                 {% if item contains 'web' and page.layout == 'category' %}
-                Web技术
+                web技术
+                {% elsif item contains 'live' and page.layout == 'category' %}
+                live生活
                 {% else %}
                   {{ item | split:'.'|first }}
                 {% endif %}
@@ -78,7 +80,9 @@
                 {% if item != 'category' %}
               <a href="{{ 'category' | append: '/' | append:item | append: '/' | relative_url }}" class="nav-item-link" >
                 {% if item contains 'web' %}
-                Web技术
+                web技术
+                {% elsif item contains 'live' and page.layout == 'category' %}
+                live生活
                 {% else %}
                   {{- item | default: page.title -}}
                 {% endif %}
