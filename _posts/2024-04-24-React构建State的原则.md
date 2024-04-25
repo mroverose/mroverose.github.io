@@ -3,7 +3,7 @@ layout: post
 title: React中State的构建原则
 description: "React"
 date:   2024-04-24 16:02:02 +0800
-categories: Web技术 React
+categories: web技术 React
 tags: web前端 React
 ---
 #### React中构建state的原则
