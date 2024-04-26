@@ -8,7 +8,9 @@ tags: Web前端 React
 ---
 #### React中构建state的原则
 >如果希望在两个组件的状态可以同步更改，可以将相关`state`从这两个组件上移除，并把state放到它们的公共父组件，再通过props将state传递给这两个组件，这被称为“状态提升”;
+
 ![pad image]({{ site.url }}/assets/image/workPanel.jpg)
+<!- excerpt_separator ->
 1. 从子组件中移除状态
 2. 从公共父组件传递硬编码数据
 3. 为公共组件添加状态
