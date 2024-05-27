@@ -10,7 +10,7 @@ tags: Web前端 React
 >如果希望通过许多中间件向下传递props,或是在应用中的许多组件都需要相同的信息，可以使用Context：
 
 ![pad image]({{ site.url }}/assets/image/ratingStar.jpg)
-<!- excerpt_separator ->
+<!-- excerpt_separator -->
 ##### 使用Context的一般步骤
 1. 创建一个context。将其从一个文件中导出，这样组件才可以使用它。
 2. 在需要数据的组件内使用刚刚创建的context。
@@ -19,7 +19,7 @@ tags: Web前端 React
 ##### Step 1：创建Context 
 ```
 //创建一个context并导出，以便在组件中可以使用
-import {crateContext } from 'react';
+import {createContext } from 'react';
 export const YourContext = createContext(1);
 ```
 ##### Step 2：使用Context
@@ -33,7 +33,7 @@ const level = useContext(YourContext);    //将yourContext值赋值给level来�
 
 ##### Step 3: 提供Context
 ```
-//在父组件中用 context provider包就是裹子组件以提供context绘它们
+//在父组件中用 context provider包裹子组件以提供context绘它们
 import { YourContext } from './YourContext.js';
 
 

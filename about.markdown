@@ -4,7 +4,7 @@ title: 关于
 permalink: /关于/
 ---
 
-### 只工作，不上班，希望每天都能进步一点点。
+### 希望每天都能进步一点。
 
 
 <p class="message" style="text-align:center">

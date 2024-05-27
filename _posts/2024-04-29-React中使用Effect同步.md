@@ -15,7 +15,7 @@ tags: Web前端 React
 - 事件处理程序。是嵌套在组件内部的函数，包含特定用户操作(列如按钮点击或键入)引起的“副作用”(它们改变了程序的状态)。
 
 ![pad image]({{ site.url }}/assets/image/hand-landscape.jpg)
-<!- excerpt_separator ->
+<!-- excerpt_separator -->
 >Effect允许指定同渲染本身，而不是特定的事件引起的副作用，Effect在屏幕更新后的提交阶段运行，可以将React组件与某个处部系统同步。
 
 ##### 如何编写Effect
